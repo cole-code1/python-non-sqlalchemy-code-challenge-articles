@@ -62,7 +62,8 @@ class Author:
         return list(set(article.magazine for article in self.articles()))
 
     def add_article(self, magazine, title):
-        return Article(self, magazine, title)
+        article = Article(self, magazine, title)
+        return article
 
     def topic_areas(self):
         return list(set(magazine.category for magazine in self.magazines()))
@@ -113,6 +114,9 @@ class Magazine:
     def contributing_authors(self):
         return list(set(article.author for article in self.articles()))
 
+    def top_publisher(self):
+        return
+
 
 # Creating instances with correct arguments
 author_1 = Author("Carry Bradshaw")
@@ -127,6 +131,7 @@ author_1.add_article(magazine_1, "How to wear a tutu with style")
 author_1.add_article(magazine_2, "How to be single and happy")
 author_2.add_article(magazine_1, "Dating life in NYC")
 author_2.add_article(magazine_2, "Carrara Marble is so 2020")
+author_2.add_article(magazine_2,"2023 Eccentric Design Trends")
 
 print(f"{author_2.name}'s Articles: {[article.title for article in author_2.articles()]}")
 
